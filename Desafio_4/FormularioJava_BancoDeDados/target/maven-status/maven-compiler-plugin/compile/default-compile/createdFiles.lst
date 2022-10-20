@@ -1,0 +1,7 @@
+Main.class
+Model\Registrar.class
+Model\Contato.class
+PrincipalForm\PrincipalForm.class
+Controller\ControllerRegistro.class
+DAO\RegistroDAO.class
+Model\Formulario.class
