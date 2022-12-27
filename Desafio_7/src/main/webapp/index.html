@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Formulário</title>
+        <link rel="stylesheet" type="text/css" href="style.css" media="screen">
+    </head>
+
+    <body id="body">
+        <h1 id="titulo"><strong>FORMULÁRIO</strong></h1><br>
+        
+        <div id="formulario">
+            <form method="post" id="form">
+            <fieldset class="grupo">
+
+                <!-- Dados Principais -->
+                <div class="campo">
+                <label for="name"><strong>Nome Completo</strong></label> 
+                <input type="text" name="name" id="name" class="input" required placeholder="Insira seu nome completo">
+                </div>
+
+                <div class="campo">
+                    <label for="email"><strong>E-mail</strong></label>
+                    <input type="email" name="email" id="email" class="input"  placeholder="Insira seu e-mail">
+                </div>
+
+                <div class="campo">
+                    <label for="cpf"><strong>Cpf</strong></label>
+                    <input type="text" name="cpf" id="cpf" class="input"  onblur="validarCPF(this)" oninput="mascaraCpf(this)" placeholder="xxx.xxx.xxx-xx">
+                </div>
+
+                <div class="campo">
+                    <label for="endereco"><strong>Endereço</strong></label>
+                    <input type="text" name="endereco" id="endereco" class="input"  placeholder="Insira seu endereço">
+                </div>
+
+                <div class="campo"> 
+                    <label for="telefone"><strong>Telefone</strong></label>
+                    <input type="tel" name="telefone" id="telefone" class="input" maxlength="15" placeholder="(xx)xxxxx-xxxx">
+                </div>
+
+                <div class="campo">
+                    <label for="escolaridade"><strong>Escolaridade</strong></label>
+                    <select name="escolaridade" id="escolaridade">
+                        <option selected disabled value="Selecione">Selecione</option>
+                        <option value="Fundamental - Incompleto">Fundamental - Incompleto</option>
+                        <option value="Fundamental - Completo">Fundamental - Completo</option>
+                        <option value="Medio - Incompleto">Medio - Incompleto</option>
+                        <option value="Medio - Completo">Medio - Completo</option>
+                        <option value="Superior - Incompleto">Superior - Incompleto</option>
+                        <option value="Superior - Completo">Superior - Completo</option>
+                        <option value="Pos-graduacao (Lato senso) - Incompleto">Pos-graduacao (Lato senso) - Incompleto</option>
+                        <option value="Pos-graduacao (Lato senso) - Completo">Pos-graduacao (Lato senso) - Completo</option>
+                        <option value="Pos-graduacao (Stricto sensu, nivel mestrado) - Incompleto">Pos-graduacao (Stricto sensu, nível mestrado) - Incompleto</option>
+                        <option value="Pos-graduacao (Stricto sensu, nivel mestrado) - Completo">Pos-graduacao (Stricto sensu, nível mestrado) - Completo</option>
+                        <option value="Pos-graduacao (Stricto sensu, nivel doutor) - Incompleto">Pos-graduacao (Stricto sensu, nível doutor) - Incompleto</option>
+                        <option value="Pos-graduacao (Stricto sensu, nivel doutor) - Completo">Pos-graduacao (Stricto sensu, nível doutor) - Completo</option>
+                    </select>
+                </div>
+
+                <div class="campo">
+                    <label for="genero"><strong>Gênero</strong></label>
+                    <select name="genero" id="genero">
+                        <option selected disabled value="Selecione">Selecione</option>
+                        <option value="Masculino">Masculino</option>
+                        <option value="Feminino">Feminino</option>
+                        <option value="Outros">Outro</option>
+                    </select>
+                </div>
+
+                <div class="campo">
+                    <label for="dataDeNascimento"><strong>Data de Nascimento</strong></label>
+                    <input type="date" name="dataDeNascimento" id="dataDeNascimento" class="input" min="1" max="130"  >
+                </div>
+
+                <div class="campo">
+                    <label><strong>Adicionar Contatos</strong></label>
+                </div>
+
+                <!-- Contatos -->
+                <div class="contato-1">
+                    <div>
+                        <label id="contato-01" class="nth-contato"><strong>Contato 1</strong></label><br><br>
+                    </div>
+                    <div class="contato-nome">
+                        <label for="contato-nome1"><strong>Nome:</strong></label>
+                        <input name="contato-nome1" id="contato-nome1" type="text" class="input" placeholder="Insira o nome do contato">
+                    </div>
+                    <div class="contato-telefone">
+                        <label for="contato-telefone1"><strong>Telefone:</strong></label>
+                        <input name="contato-telefone1" id="contato-telefone1" type="tel" class="input"  maxlength="15" placeholder="(xx)xxxxx-xxxx">
+                    </div>
+                    <div class="contato-email">
+                        <label for="contato-email1"><strong>E-mail: </strong></label>
+                        <input name="contato-email1" id="contato-email1" type="email" class="input"  placeholder="Insira o e-mail do contato"><br>
+                    </div>
+
+                    <div id="div-referencia-pra-add-contatos"></div>
+                    <div class="botoes">
+                        <button type="button" id="adicionar-contato">Adicionar contato</button><br><br>
+                        <button type="button" id="remove-contato">Remover contato</button><br><br>
+                    </div>
+
+                </div>
+                </fieldset>
+                <button type="reset"  class="resetar">Resetar</button>
+                <button type="submit" id="submit" class="enviar">Enviar</button><br><br><br>
+            </form>
+        </div>
+        
+        <!-- Tabela -->
+        <div class="gridTodo">
+            <div class="gridNome">
+                <strong><th>Nome</th></strong><br><br>
+            </div>
+
+            <div class="gridEmail">
+                <strong><th>E-mail</th></strong><br><br>
+                
+            </div>
+
+            <div class="gridEscolaridade">
+                <th><strong>Escolaridade</strong></th><br><br>
+                
+            </div>
+
+            <div class="gridAcoes">
+                <th><strong>Ações</strong></th>
+            </div>
+
+            <div class="gridRefAdicionar"></div>
+        </div>
+        
+        <script src="validacao&Mascara.js"></script>
+        <script src="script.js"></script>
+
+    </body>
+<html>
